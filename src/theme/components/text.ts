@@ -9,23 +9,22 @@ export const textStyles: ComponentStyleConfig = {
   // style object for base or default style
   baseStyle: {
     fontsize: "1rem",
-    fontFamily: FONTS.bodyFont,
+    fontFamily: "body",
   },
-  // styles for different visual variants ("outline", "solid")
   variants: {
     heading: {
-      fontSize: ["3rem", "5rem", "7rem", "9rem"],
+      fontSize: ["3rem", "4.375rem", "6.25rem"],
       fontFamily: "heading",
       textTransform: "capitalize",
     },
     h1: {
       fontSize: ["1.3rem", "1.6rem", "1.8rem", "2.3rem"],
       fontWeight: "bold",
-      fontFamily: FONTS.headingFont,
+      fontFamily: "heading",
     },
     h2: {
       fontSize: ["1.2rem", "1.5rem", "1.7rem", "2rem"],
-      fontFamily: FONTS.bodyFont,
+      fontFamily: "body",
       fontWeight: "light",
     },
     h3: {
@@ -38,7 +37,6 @@ export const textStyles: ComponentStyleConfig = {
     },
     p: {
       fontSize: "1rem",
-      fontFamily: FONTS.bodyFont,
     },
   },
   // default values for `size` and `variant`
