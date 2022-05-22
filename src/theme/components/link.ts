@@ -14,6 +14,16 @@ export const linkStyles: ComponentStyleConfig = {
       outline: "none",
     },
   },
+  variants: {
+    navbar: {
+      fontSize: ["1.2rem", "1.5rem"],
+      fontWeight: "light",
+      _hover: {
+        color: "text2",
+        textDecor: "none",
+      },
+    },
+  },
   // default values for `size` and `variant`
   defaultProps: {
     size: "",

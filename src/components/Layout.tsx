@@ -7,7 +7,7 @@ import { Navbar } from "@qazalin/components";
  */
 export const Layout: React.FC<LayoutPropType> = ({ children }) => {
   return (
-    <Box w="100vw" h="100vh" p="40px">
+    <Box w="100vw" h="100vh" px="40px">
       <Center w="100%" h="100px" justifyContent="flex-start">
         <Navbar />
       </Center>

@@ -25,7 +25,7 @@ export const theme = extendTheme({
   styles: {
     global: () => ({
       body: {
-        overflow: "hidden",
+        overflowX: "hidden",
         fontFamily: "body",
         bg: "bg1",
         lineHeight: "base",

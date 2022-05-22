@@ -17,18 +17,13 @@ export const textStyles: ComponentStyleConfig = {
       fontFamily: "heading",
       textTransform: "capitalize",
     },
-    h1: {
-      fontSize: ["1.3rem", "1.6rem", "1.8rem", "2.3rem"],
-      fontWeight: "bold",
-      fontFamily: "heading",
-    },
-    h2: {
+    subHeading: {
       fontSize: ["1.2rem", "1.5rem", "1.7rem", "2rem"],
       fontFamily: "body",
       fontWeight: "light",
     },
     h3: {
-      fontSize: ["0.90rem", "0.95rem", "1rem", "1.2rem", "1.3rem"],
+      fontSize: ["1.2rem", "1.5rem"],
       fontWeight: "light",
     },
     h4: {
@@ -36,12 +31,12 @@ export const textStyles: ComponentStyleConfig = {
       fontWeight: "light",
     },
     p: {
-      fontSize: "1rem",
+      fontSize: ["1rem", "1.25rem"],
     },
   },
   // default values for `size` and `variant`
   defaultProps: {
     size: "",
-    variant: "",
+    variant: "p",
   },
 };
