@@ -2,6 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
 import "@fontsource/raleway";
 import "@fontsource/lato";
+import "@fontsource/dejavu-mono";
 
 import { theme } from "@qazalin/theme";
 import { Layout } from "@qazalin/components";

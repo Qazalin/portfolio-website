@@ -22,6 +22,13 @@ export const textStyles: ComponentStyleConfig = {
       fontFamily: "body",
       fontWeight: "light",
     },
+    h1: {
+      fontSize: ["2rem", "3.5rem"],
+      letterSpacing: ["-1.2px"],
+      lineHeight: ["2rem", "3.75rem"],
+      fontFamily: "heading",
+      textTransform: "capitalize",
+    },
     h3: {
       fontSize: ["1.2rem", "1.5rem"],
       fontWeight: "light",
@@ -32,6 +39,12 @@ export const textStyles: ComponentStyleConfig = {
     },
     p: {
       fontSize: ["1rem", "1.25rem"],
+      lineHeight: ["1.5rem", "2rem"],
+    },
+    mono: {
+      fontSize: ["0.85rem", "1rem"],
+      fontWeight: "light",
+      fontFamily: "DejaVu Mono, monospace",
     },
   },
   // default values for `size` and `variant`

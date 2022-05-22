@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export const Navbar = () => {
   const sections = ["work", "research", "contact"];
   return (
-    <HStack w="100%" h="100%" spacing={10}>
+    <HStack w="100%" h="100%" spacing={10} zIndex="dropdown">
       {sections.map((s, i) => (
         <Link
           as={motion.a}

@@ -6,17 +6,17 @@ import { textStyles } from "./components/text";
 import { linkStyles } from "./components/link";
 import { buttonStyles } from "./components/button";
 
-const colors = COLORS.colors;
+const colors = COLORS;
 const semanticTokens = ThemeColors.semanticTokens;
 
 const config: ThemeConfig = {
   initialColorMode: "dark",
   useSystemColorMode: true,
 };
-export const theme = extendTheme({
+export const theme: ThemeConfig = extendTheme({
   config,
   colors,
-  BREAKPOINTS,
+  breakpoints: BREAKPOINTS,
   semanticTokens,
   fonts: {
     heading: "Raleway, sans-serif",
