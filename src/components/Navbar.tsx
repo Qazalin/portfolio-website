@@ -10,9 +10,9 @@ export const Navbar = () => {
         <Link
           as={motion.a}
           whileHover={{ scale: 1.2 }}
-          whileTap={{ rotate: 20 }}
           variant="navbar"
           key={i}
+          href={`/${s}`}
         >
           {s}
         </Link>

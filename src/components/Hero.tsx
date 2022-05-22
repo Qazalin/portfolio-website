@@ -1,8 +1,17 @@
 import { Center, Text, Box } from "@chakra-ui/react";
-import { primaryGradient } from "@qazalin/theme";
+import { heroAnimationVariant, primaryGradient } from "@qazalin/theme";
+import { motion } from "framer-motion";
 
 export const Hero = ({ title, subtitle, desc }) => (
-  <Center flexDir="column" w="100%" h="100%">
+  <Center
+    as={motion.div}
+    animate="visible"
+    initial="hidden"
+    variants={heroAnimationVariant}
+    flexDir="column"
+    w="100%"
+    h="100%"
+  >
     <Text variant="heading">{title}</Text>
     <Text
       variant="heading"

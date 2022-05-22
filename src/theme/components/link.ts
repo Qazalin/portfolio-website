@@ -12,6 +12,7 @@ export const linkStyles: ComponentStyleConfig = {
     fontFamily: FONTS.bodyFont,
     _focus: {
       outline: "none",
+      boxShadow: "none",
     },
   },
   variants: {
