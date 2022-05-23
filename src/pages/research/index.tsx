@@ -13,7 +13,7 @@ export const Index = ({ source, data }) => {
 export default Index;
 
 export async function getServerSideProps() {
-  const { data } = await client.query({
+  /* const { data } = await client.query({
     query: gql`
       {
         posts {
@@ -21,13 +21,25 @@ export async function getServerSideProps() {
           category
           createdAt
           publishedAt
-          createdBy {
-            name
-          }
         }
       }
     `,
-  });
+  }); */
+  const res = {
+    posts: [
+      {
+        __typename: "Post",
+        title: "The economics of crypto",
+        category: "analysis",
+        createdAt: "2022-05-22T13:03:53.263248+00:00",
+        publishedAt: "2022-05-22T13:30:00.366626+00:00",
+        createdBy: {
+          __typename: "User",
+          name: "qazal",
+        },
+      },
+    ],
+  };
 
   const source = "Some **mdx** text, with a component";
   const mdxSource = await serialize(source);
