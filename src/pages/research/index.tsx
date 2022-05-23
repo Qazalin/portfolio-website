@@ -15,29 +15,25 @@ import { GetServerSideProps } from "next";
 const components = { p: RText };
 export const Index: React.FC<{ data: AllResearchRes }> = ({ data }) => {
   console.log(data);
-  const d = data.researchs[0];
-  /*  return (
+  return (
     <Box>
       {data.researchs.map((r, i) => (
-        <Box key={i}>{r.title}</Box>
+        <ResearchPreview
+          key={`r-${i}`}
+          category={r.category}
+          title={r.title}
+          imageUrl={r.image.url}
+          createdAt={r.createdAt}
+          slug={r.slug}
+        />
       ))}
     </Box>
   );
-  */
-  return (
-    <ResearchPreview
-      category={d.category}
-      title={d.title}
-      imageUrl={d.image.url}
-      createdAt={d.createdAt}
-    />
-  );
-  // return <MDXRemote {...source} components={components} />;
 };
 export default Index;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  /* const { data } = await client.query<ResearchPreview>({
+  const { data } = await client.query<AllResearchRes>({
     query: gql`
       {
         researchs {
@@ -51,9 +47,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
         }
       }
     `,
-    }); */
+  });
 
-  const data: AllResearchRes = {
+  /* const data: AllResearchRes = {
     researchs: [
       {
         category: "analysis",
@@ -74,7 +70,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
         slug: "another",
       },
     ],
-  };
+  }; */
 
   /*  const source = "Some **mdx** text, with a component";
   const mdxSource = await serialize(source);

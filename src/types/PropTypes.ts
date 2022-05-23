@@ -33,4 +33,5 @@ export interface ResearchPreviewProps extends CategoryCardProps {
   title: string;
   imageUrl: string;
   createdAt: string;
+  slug: string;
 }
