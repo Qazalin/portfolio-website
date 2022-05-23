@@ -1,47 +1,83 @@
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import { Box, Text } from "@chakra-ui/react";
-import { BlogPost, RText } from "@qazalin/components";
+import {
+  ResearchPreview,
+  BlogPost,
+  CategoryCard,
+  RText,
+} from "@qazalin/components";
 import { gql } from "@apollo/client";
 import { client } from "@qazalin/gql";
+import { AllResearchRes, ResearchPreviewType } from "@qazalin/types";
+import { GetServerSideProps } from "next";
 
 const components = { p: RText };
-export const Index = ({ source, data }) => {
+export const Index: React.FC<{ data: AllResearchRes }> = ({ data }) => {
   console.log(data);
-  return <MDXRemote {...source} components={components} />;
+  const d = data.researchs[0];
+  /*  return (
+    <Box>
+      {data.researchs.map((r, i) => (
+        <Box key={i}>{r.title}</Box>
+      ))}
+    </Box>
+  );
+  */
+  return (
+    <ResearchPreview
+      category={d.category}
+      title={d.title}
+      imageUrl={d.image.url}
+      createdAt={d.createdAt}
+    />
+  );
+  // return <MDXRemote {...source} components={components} />;
 };
 export default Index;
 
-export async function getServerSideProps() {
-  /* const { data } = await client.query({
+export const getServerSideProps: GetServerSideProps = async () => {
+  /* const { data } = await client.query<ResearchPreview>({
     query: gql`
       {
-        posts {
-          title
+        researchs {
           category
           createdAt
-          publishedAt
+          image {
+            url
+          }
+          title
+          slug
         }
       }
     `,
-  }); */
-  const res = {
-    posts: [
+    }); */
+
+  const data: AllResearchRes = {
+    researchs: [
       {
-        __typename: "Post",
-        title: "The economics of crypto",
         category: "analysis",
-        createdAt: "2022-05-22T13:03:53.263248+00:00",
-        publishedAt: "2022-05-22T13:30:00.366626+00:00",
-        createdBy: {
-          __typename: "User",
-          name: "qazal",
+        createdAt: "2022-05-23T06:13:40.904727+00:00",
+        image: {
+          url: "https://media.graphassets.com/uK3K6VlOQpi3Obe59gB9",
         },
+        title: "The economics of crypto",
+        slug: "the-economics-of-crypto",
+      },
+      {
+        category: "analysis",
+        createdAt: "2022-05-23T06:13:40.904727+00:00",
+        image: {
+          url: "https://media.graphassets.com/iTex9021T6a4zdEDpeIb",
+        },
+        title: "another",
+        slug: "another",
       },
     ],
   };
 
-  const source = "Some **mdx** text, with a component";
+  /*  const source = "Some **mdx** text, with a component";
   const mdxSource = await serialize(source);
-  return { props: { source: mdxSource, data } };
-}
+  */
+  return { props: { data } };
+};

@@ -1,9 +1,13 @@
 import { BoxProps } from "@chakra-ui/react";
 import { HTMLMotionProps } from "framer-motion";
+import { Category } from "./ApiTypes";
 
+// * Layout * //
 export type LayoutPropType = {
   children?: React.ReactNode;
 };
+
+// * Theme * //
 export interface WavyTextProps extends BoxProps {
   text: string;
   delay?: number;
@@ -11,6 +15,7 @@ export interface WavyTextProps extends BoxProps {
   duration?: number;
 }
 
+// * MDX * //
 /**
  * Since next-mdx-remote does not support ts,
  * we need to cast all props as any
@@ -18,3 +23,14 @@ export interface WavyTextProps extends BoxProps {
  * the changes will impact all components in
  * the components/mdx dir */
 export type MDXCustomComponent = (props: any) => React.DOMElement;
+
+// * Research * //
+export type CategoryCardProps = {
+  category: Category;
+};
+
+export interface ResearchPreviewProps extends CategoryCardProps {
+  title: string;
+  imageUrl: string;
+  createdAt: string;
+}

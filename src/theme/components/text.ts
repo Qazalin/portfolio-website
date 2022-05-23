@@ -29,21 +29,27 @@ export const textStyles: ComponentStyleConfig = {
       fontFamily: "heading",
       textTransform: "capitalize",
     },
+    h2: {
+      fontSize: ["2xl", "3xl"],
+      letterSpacing: ["-1.2px"],
+      lineHeight: ["2rem", "3.75rem"],
+      fontFamily: "heading",
+      textTransform: "capitalize",
+    },
     h3: {
       fontSize: ["1.2rem", "1.5rem"],
       fontWeight: "light",
     },
     h4: {
-      fontSize: ["0.85rem", "0.9rem", "0.95rem", "1rem", "1.3rem"],
-      fontWeight: "light",
+      fontSize: ["0.85rem", "1rem"],
     },
     p: {
       fontSize: ["1rem", "1.25rem"],
       lineHeight: ["1.5rem", "2rem"],
     },
     mono: {
-      fontSize: ["0.85rem", "1rem"],
-      fontWeight: "light",
+      fontsize: ["0.85rem", "1rem"],
+      fontweight: "light",
       fontFamily: "DejaVu Mono, monospace",
     },
   },
