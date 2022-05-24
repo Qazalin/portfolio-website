@@ -11,22 +11,6 @@ const components = { p: RText };
 export const Index: React.FC<{ data: AllResearchRes }> = ({ data }) => {
   console.log(data);
   return <ResearchLayout posts={data.researchs} />;
-  /*
-  return (
-    <Box>
-      {data.researchs.map((r, i) => (
-        <ResearchPreview
-          key={`r-${i}`}
-          category={r.category}
-          title={r.title}
-          imageUrl={r.image.url}
-          createdAt={r.createdAt}
-          slug={r.slug}
-        />
-      ))}
-    </Box>
-    ); 
-    */
 };
 export default Index;
 

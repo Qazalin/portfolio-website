@@ -1,3 +1,4 @@
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { ParsedUrlQuery } from "querystring";
 export type Category = "analysis" | "crypto";
 
@@ -9,20 +10,16 @@ export interface ResearchPreviewType {
     url: string;
   };
   title: string;
-  slug: string;
+  slug?: string;
 }
 
-/** Interface for the full research */
+/** Interface for the full research used in the UI with serialized content for MDX */
 export interface ResearchType extends ResearchPreviewType {
-  content: string; // The markdown content
+  mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>; // The markdown content
 }
 
 export type AllResearchRes = {
   researchs: ResearchPreviewType[];
-};
-
-export type ResearchRes = {
-  research: ResearchType;
 };
 
 /* Required for quering a single research */
@@ -31,4 +28,7 @@ export type ResearchQueryVars = {
 };
 export interface ResearchSSRParams extends ParsedUrlQuery {
   slug: string;
+}
+export interface GQLResearchRes extends ResearchPreviewType {
+  content: string;
 }

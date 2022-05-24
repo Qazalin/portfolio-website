@@ -1,20 +1,21 @@
-import { Box, Center, Text } from "@chakra-ui/react";
-import { Research } from "@qazalin/types";
+import { Box, Stack, Center, Text } from "@chakra-ui/react";
+import { ResearchType } from "@qazalin/types";
+import { formatDate } from "@qazalin/utils";
 import Image from "next/image";
+import { MDXRemote } from "next-mdx-remote";
 
-export const ResearchPost: React.FC<Research> = ({
+export const ResearchPost: React.FC<ResearchType> = ({
   image,
   title,
   category,
-  content,
+  mdxSource,
   createdAt,
 }) => {
   return (
-    <Box w="100%" h="100%">
+    <Stack w="100%" h="100%">
       <Box
         w="100%"
         h="40%"
-        bg="bg2"
         position="absolute"
         top={0}
         left={0}
@@ -33,9 +34,12 @@ export const ResearchPost: React.FC<Research> = ({
           {title}
         </Text>
         <Text variant="mono" opacity="0.8" my="10px">
-          {createdAt}
+          {formatDate(createdAt)}
         </Text>
       </Center>
-    </Box>
+      <Box w="100%" h="calc(100% - 40%)" position="absolute" bottom={0}>
+        <MDXRemote {...mdxSource} />
+      </Box>
+    </Stack>
   );
 };
