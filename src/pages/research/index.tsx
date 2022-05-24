@@ -1,12 +1,7 @@
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import { Box, Text } from "@chakra-ui/react";
-import {
-  ResearchPreview,
-  BlogPost,
-  CategoryCard,
-  RText,
-} from "@qazalin/components";
+import { ResearchPreview, ResearchLayout, RText } from "@qazalin/components";
 import { gql } from "@apollo/client";
 import { client } from "@qazalin/gql";
 import { AllResearchRes, ResearchPreviewType } from "@qazalin/types";
@@ -15,6 +10,8 @@ import { GetServerSideProps } from "next";
 const components = { p: RText };
 export const Index: React.FC<{ data: AllResearchRes }> = ({ data }) => {
   console.log(data);
+  return <ResearchLayout posts={data.researchs} />;
+  /*
   return (
     <Box>
       {data.researchs.map((r, i) => (
@@ -28,11 +25,13 @@ export const Index: React.FC<{ data: AllResearchRes }> = ({ data }) => {
         />
       ))}
     </Box>
-  );
+    ); 
+    */
 };
 export default Index;
 
 export const getServerSideProps: GetServerSideProps = async () => {
+  /*
   const { data } = await client.query<AllResearchRes>({
     query: gql`
       {
@@ -48,8 +47,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
       }
     `,
   });
+  */
 
-  /* const data: AllResearchRes = {
+  const data: AllResearchRes = {
     researchs: [
       {
         category: "analysis",
@@ -70,7 +70,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
         slug: "another",
       },
     ],
-  }; */
+  };
 
   /*  const source = "Some **mdx** text, with a component";
   const mdxSource = await serialize(source);

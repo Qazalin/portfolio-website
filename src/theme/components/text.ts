@@ -25,14 +25,14 @@ export const textStyles: ComponentStyleConfig = {
     h1: {
       fontSize: ["2rem", "3.5rem"],
       letterSpacing: ["-1.2px"],
-      lineHeight: ["2rem", "3.75rem"],
+      // lineHeight: ["2rem", "3.75rem"],
       fontFamily: "heading",
       textTransform: "capitalize",
     },
     h2: {
       fontSize: ["2xl", "3xl"],
-      letterSpacing: ["-1.2px"],
-      lineHeight: ["2rem", "3.75rem"],
+      // letterSpacing: ["-1.2px"],
+      // lineHeight: ["2rem", "3.75rem"],
       fontFamily: "heading",
       textTransform: "capitalize",
     },
