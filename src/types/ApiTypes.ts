@@ -1,3 +1,4 @@
+import { ParsedUrlQuery } from "querystring";
 export type Category = "analysis" | "crypto";
 
 /** Interface for research preview in the index file */
@@ -12,7 +13,7 @@ export interface ResearchPreviewType {
 }
 
 /** Interface for the full research */
-export interface Research extends ResearchPreviewType {
+export interface ResearchType extends ResearchPreviewType {
   content: string; // The markdown content
 }
 
@@ -21,10 +22,13 @@ export type AllResearchRes = {
 };
 
 export type ResearchRes = {
-  research: Research;
+  research: ResearchType;
 };
 
 /* Required for quering a single research */
 export type ResearchQueryVars = {
   slug: string;
 };
+export interface ResearchSSRParams extends ParsedUrlQuery {
+  slug: string;
+}

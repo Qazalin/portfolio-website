@@ -1,4 +1,4 @@
-export * from "./BlogPost";
+export * from "./ResearchPost";
 export * from "./CategoryCard";
 export * from "./ResearchPreview";
 export * from "./ResearchLayout";

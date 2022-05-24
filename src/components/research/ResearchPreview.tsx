@@ -1,5 +1,6 @@
 import {
   Flex,
+  HStack,
   LinkOverlay,
   Box,
   Center,
@@ -43,7 +44,7 @@ export const ResearchPreview: React.FC<ResearchPreviewProps> = ({
         boxShadow: "2px",
       }}
     >
-      <LinkOverlay href={`/blog/${slug}`} w="100%" h="100%">
+      <LinkOverlay href={`/research/${slug}`} w="100%" h="100%">
         <ChakraImage
           src={imageUrl}
           minH="350px"
@@ -51,17 +52,17 @@ export const ResearchPreview: React.FC<ResearchPreviewProps> = ({
           objectFit="cover"
           mb="20px"
         />
-        <Flex w="100%">
-          <Box w="70%">
-            <Text fontWeight="bold" variant="h2">
-              {title}
-            </Text>
-            <Text variant="h4" mb="10px" color="text2">
-              {formatDate(createdAt)}
-            </Text>
-          </Box>
+        <Box mb="40px">
+          <Text fontWeight="bold" variant="h2">
+            {title}
+          </Text>
+        </Box>
+        <Box>
+          <Text pos="absolute" bottom={2} variant="h4" mb="10px" color="text2">
+            {formatDate(createdAt)}
+          </Text>
           <CategoryCard category={category} />
-        </Flex>
+        </Box>
       </LinkOverlay>
     </LinkBox>
   );

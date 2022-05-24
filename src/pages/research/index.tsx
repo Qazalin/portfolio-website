@@ -31,7 +31,6 @@ export const Index: React.FC<{ data: AllResearchRes }> = ({ data }) => {
 export default Index;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  /*
   const { data } = await client.query<AllResearchRes>({
     query: gql`
       {
@@ -47,8 +46,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
       }
     `,
   });
-  */
 
+  /* 
   const data: AllResearchRes = {
     researchs: [
       {
@@ -70,7 +69,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
         slug: "another",
       },
     ],
-  };
+    }; */
 
   /*  const source = "Some **mdx** text, with a component";
   const mdxSource = await serialize(source);

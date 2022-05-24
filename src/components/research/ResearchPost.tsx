@@ -1,8 +1,8 @@
 import { Box, Center, Text } from "@chakra-ui/react";
-import { ResearchType } from "@qazalin/types";
+import { Research } from "@qazalin/types";
 import Image from "next/image";
 
-export const ResearchPost: React.FC<ResearchType> = ({
+export const ResearchPost: React.FC<Research> = ({
   image,
   title,
   category,
