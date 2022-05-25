@@ -7,13 +7,12 @@ import {
   ListIcon,
   ListItem,
 } from "@chakra-ui/react";
-import { CheckCircleIcon, LinkIcon } from "@chakra-ui/icons";
-
 import {
   Hero,
   NFTSearchBar,
   CollectionView,
   NFTCollections,
+  NFTRarityView,
 } from "@qazalin/components";
 import { NFTCollectionType } from "@qazalin/types";
 
@@ -22,7 +21,7 @@ const Index = ({ collections }) => {
   return (
     <Box>
       <Hero />
-      <NFTSearchBar collections={collections} />
+      <NFTRarityView />
     </Box>
   );
 };
@@ -34,6 +33,7 @@ interface NFTGoCollectionRes extends Response {
   name: string;
   logo: string;
 }
+/* 
 export async function getServerSideProps() {
   const collections: NFTCollectionType[] = [];
   for (const [name, addr] of Object.entries(NFTCollections)) {
@@ -58,3 +58,4 @@ export async function getServerSideProps() {
     },
   };
 }
+*/
