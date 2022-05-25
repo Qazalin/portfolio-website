@@ -1,8 +1,11 @@
 import {
   HStack,
+  Image,
+  Flex,
   Avatar,
   SkeletonCircle,
   Text,
+  Box,
   LinkBox,
   LinkOverlay,
 } from "@chakra-ui/react";
@@ -17,20 +20,29 @@ export const CollectionView: React.FC<NFTCollectionType> = ({
   const [isImageLoading, setIsImageLoading] = useState(true);
 
   return (
-    <HStack>
-      <LinkOverlay href={`https://nftgo.io/${slug}`}>
+    <LinkBox my="25px">
+      <LinkOverlay
+        href={`https://nftgo.io/collection/${slug}`}
+        display="flex"
+        target="_blank"
+      >
         <SkeletonCircle
           display={isImageLoading ? "initial" : "none"}
-          size="10"
+          w="100px"
+          h="100px"
         />
-        <Avatar
-          size="10"
+        <Image
+          w="100px"
+          h="100px"
+          borderRadius="50%"
           display={isImageLoading ? "none" : "initial"}
           src={imageUrl}
           onLoad={() => setIsImageLoading(false)}
         />
-        <Text>{name}</Text>
+        <Text m="auto" ml="15px">
+          {name}
+        </Text>
       </LinkOverlay>
-    </HStack>
+    </LinkBox>
   );
 };

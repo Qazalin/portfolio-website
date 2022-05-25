@@ -11,6 +11,7 @@ import { KeyboardEvent, useEffect, useRef, useState } from "react";
 import { CollectionSearchCard } from ".";
 import { AiOutlineSearch } from "react-icons/ai";
 import { NFTCollectionType } from "@qazalin/types";
+import { NFTCollections } from "./constants";
 
 /**
  * SearchBar components with Autocomplete, listen to enter key and recommendations
@@ -22,9 +23,20 @@ export const NFTSearchBar: React.FC<{ collections: NFTCollectionType[] }> = ({
   // show a differnt UI for the search state
   const [isUserSearching, setIsUserSearching] = useState(false);
   const [searchValue, setSearchValue] = useState("");
-  const [searchResults, setSearchResulrs] = useState(collections);
+  const [searchResults, setSearchResults] = useState(collections);
 
-  // side-effects of typing into the search bar: 1. Change the UI, 2. Call the API
+  /* const filter = (e) => {
+    const keyword: string = e.target.value;
+
+    if (keyword !== "") {
+      const results = Object.keys(NFTCollections).filter((name) => {
+        return name.startsWith(keyword.toLowerCase());
+      });
+      setSearchResults(results);
+    }
+  }; */
+
+  // side-effects of typing into the search bar: 1. Change the UI, 2. Filter the results
   useEffect(() => {
     if (!searchValue) setIsUserSearching(false);
     else setIsUserSearching(true);
@@ -41,7 +53,23 @@ export const NFTSearchBar: React.FC<{ collections: NFTCollectionType[] }> = ({
 
   function handleSearchValueChange(e: string) {
     setSearchValue(e);
+    console.log(e);
+    searchCollections(e);
   }
+
+  const searchCollections = (value: string) => {
+    if (value !== "") {
+      const allResults: NFTCollectionType[] = collections.filter((c, i) => {
+        return c.name.toLowerCase().startsWith(value.toLowerCase());
+      });
+      if (allResults.length == 0) {
+        console.log("not found");
+      }
+      setSearchResults(allResults);
+    } else {
+      setSearchResults(collections);
+    }
+  };
 
   return (
     <>
@@ -76,11 +104,12 @@ export const NFTSearchBar: React.FC<{ collections: NFTCollectionType[] }> = ({
             px="40px"
             bg="gray.700"
           >
-            {isUserSearching ? (
+            <CollectionSearchCard collections={searchResults} />
+            {/* isUserSearching && searchResults && searchResults.length > 0 ? (
               <CollectionSearchCard collections={collections} />
             ) : (
               <CollectionSearchCard collections={collections} />
-            )}
+            ) */}
           </Box>
         </ScaleFade>
       </Stack>
