@@ -22,7 +22,7 @@ export interface WavyTextProps extends BoxProps {
  * however, this can be changed later and
  * the changes will impact all components in
  * the components/mdx dir */
-export type MDXCustomComponent = (props: any) => React.DOMElement;
+export type MDXCustomComponent = (props: any) => React.ReactElement;
 
 // * Research * //
 export type CategoryCardProps = {
@@ -33,5 +33,13 @@ export interface ResearchPreviewProps extends CategoryCardProps {
   title: string;
   imageUrl: string;
   createdAt: string;
+  slug: string;
+}
+
+/**
+ * Information for viewing an NFT collections */
+export interface NFTCollectionType {
+  imageUrl: string;
+  name: string;
   slug: string;
 }
