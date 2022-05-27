@@ -53,7 +53,6 @@ export const NFTSearchBar: React.FC<{ collections: NFTCollectionType[] }> = ({
 
   function handleSearchValueChange(e: string) {
     setSearchValue(e);
-    console.log(e);
     searchCollections(e);
   }
 

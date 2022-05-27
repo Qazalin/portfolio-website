@@ -13,7 +13,8 @@ import { serialize } from "next-mdx-remote/serialize";
 const Research: React.FC<{ research: ResearchType }> = ({ research }) => {
   console.log(research);
 
-  const router = useRouter();
+  return <div />;
+  /* const router = useRouter();
   if (router.isFallback || !research) {
     return <div>loading</div>;
   }
@@ -25,7 +26,7 @@ const Research: React.FC<{ research: ResearchType }> = ({ research }) => {
       mdxSource={research.mdxSource}
       createdAt={research.createdAt}
     />
-  );
+  ); */
 };
 
 export default Research;
@@ -36,7 +37,10 @@ export const getServerSideProps: GetServerSideProps<
   },
   ResearchSSRParams
 > = async ({ params }) => {
-  const { data } = await client.query<{ research: GQLResearchRes }>({
+  let research: ResearchType = null;
+  const { data, error, loading } = await client.query<{
+    research: GQLResearchRes;
+  }>({
     query: gql`
       query getOneResearch($slug: String) {
         research(where: { slug: $slug }) {
@@ -54,17 +58,24 @@ export const getServerSideProps: GetServerSideProps<
     },
   });
 
-  const mdxSource = await serialize(data.research.content);
-  const research: ResearchType = {
-    title: data.research.title,
-    category: data.research.category,
-    mdxSource,
-    createdAt: data.research.createdAt,
-    image: data.research.image,
-  };
+  if (error) {
+    throw new Error("Error in fetching blog posts");
+  }
+  if (data) {
+    const mdxSource = await serialize(data.research.content);
+    research = {
+      title: data.research.title,
+      category: data.research.category,
+      mdxSource,
+      createdAt: data.research.createdAt,
+      image: data.research.image,
+    };
+  }
   return {
     props: {
       research,
+      error,
+      loading,
     },
   };
 };

@@ -6,3 +6,13 @@ export const NFTCollections: Record<string, string> = {
   Doodles: "0x8a90CAb2b38dba80c64b7734e58Ee1dB38B8992e",
   Moonbirds: "0x23581767a106ae21c074b2276D25e5C3e136a68b",
 };
+
+/*
+ * Colors used for rarity */
+const rarityColors: Record<Rarity, string> = {
+  Legendary: "#F8D781",
+  Rare: "#CD93EA",
+  Classic: "#7E87F1",
+  Normal: "#878C9E",
+};
+export type Rarity = "Legendary" | "Rare" | "Classic" | "Normal";
