@@ -2,7 +2,7 @@ export async function fetchNFTGoData(url: string) {
   const res = await fetch(url, {
     headers: {
       "X-API-KEY": process.env.NFTGO_API_KEY,
-      mode: "no-cors",
+      // mode: "no-cors",
     },
   });
 

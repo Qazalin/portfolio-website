@@ -11,6 +11,11 @@ import { fetchNFTGoData } from "@qazalin/lib/fetcher";
 import { NFTCollectionType } from "@qazalin/types";
 
 const Index = () => {
+  /*  const { data, error } = useSWR(
+    "https://api.nftgo.dev/eth/v1/market/metrics",
+    fetchNFTGoData
+  );
+  */
   return (
     <Box>
       <Hero />

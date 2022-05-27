@@ -48,8 +48,8 @@ export const textStyles: ComponentStyleConfig = {
       lineHeight: ["1.5rem", "2rem"],
     },
     mono: {
-      fontsize: ["0.85rem", "1rem"],
-      fontweight: "light",
+      fontSize: ["0.85rem", "1rem"],
+      fontWeight: "light",
       fontFamily: "DejaVu Mono, monospace",
     },
   },
