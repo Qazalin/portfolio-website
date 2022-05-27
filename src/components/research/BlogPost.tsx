@@ -6,7 +6,6 @@ export const ResearchPost: React.FC<ResearchType> = ({
   image,
   title,
   category,
-  content,
   createdAt,
 }) => {
   return (

@@ -11,10 +11,6 @@ import { fetchNFTGoData } from "@qazalin/lib/fetcher";
 import { NFTCollectionType } from "@qazalin/types";
 
 const Index = () => {
-  const { data, error } = useSWR(
-    "https://api.nftgo.dev/eth/v1/market/metrics",
-    fetchNFTGoData
-  );
   return (
     <Box>
       <Hero />
@@ -31,6 +27,7 @@ interface NFTGoCollectionRes extends Response {
   logo: string;
 }
 
+/* 
 export async function getServerSideProps() {
   const collections: NFTCollectionType[] = [];
   for (const [name, addr] of Object.entries(NFTCollections)) {
@@ -39,7 +36,7 @@ export async function getServerSideProps() {
       {
         headers: {
           "X-API-KEY": process.env.NFTGO_API_KEY,
-          "Content-Type": "application/json",
+          //       "Content-Type": "application/json",
         },
       }
     );
@@ -68,4 +65,5 @@ export async function getServerSideProps() {
       data,
     },
   };
-}
+  }
+*/
