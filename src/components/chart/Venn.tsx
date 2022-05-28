@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import { findObjectIntersection, getObjectIntersections } from "@qazalin/lib";
+import { getObjectIntersections } from "@qazalin/lib";
 import { COLORS, ThemeColors } from "@qazalin/theme";
 import {
   VennDiagram,
