@@ -6,3 +6,4 @@ export * from "./Navbar";
 export * from "./mdx";
 export * from "./nft";
 export * from "./chart";
+export * from "./logo";

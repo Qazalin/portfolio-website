@@ -1,6 +1,7 @@
 import { Box, Stack, Center, Text } from "@chakra-ui/react";
 import { ResearchType } from "@qazalin/types";
 import { formatDate } from "@qazalin/utils";
+import { RPie } from "@qazalin/components";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote";
 import { RH2, RH3, RImage, RText } from "../mdx";
@@ -14,17 +15,26 @@ export const ResearchPost: React.FC<ResearchType> = ({
   category,
   mdxSource,
   createdAt,
+  usedCharts,
 }) => {
-  const components = {
+  const charts = Object.fromEntries(usedCharts.map((k) => [k, k]));
+  console.log(charts);
+  const defaultComponents = {
     p: RText,
     h2: RH2,
     h3: RH3,
     a: RLink,
     img: RImage,
     li: RText, // TODO: change this to a real list element
-    Test,
-    Another,
   };
+  const components = {
+    ...defaultComponents,
+    Another,
+    Test,
+    // save up on performance
+    RPie: usedCharts.includes("RPie") ? RPie : null,
+  };
+  // console.log(components);
   return (
     <Stack w="100%" h="100%">
       <Box

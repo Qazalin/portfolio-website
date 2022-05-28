@@ -3,6 +3,7 @@ import { gql } from "@apollo/client";
 import { useRouter } from "next/router";
 import {
   AllResearchRes,
+  ChartType,
   GQLResearchRes,
   ResearchSSRParams,
   ResearchType,
@@ -12,7 +13,9 @@ import { ResearchPost } from "@qazalin/components";
 import { serialize } from "next-mdx-remote/serialize";
 import { Spinner, Box } from "@chakra-ui/react";
 
-const Research: React.FC<{ research: ResearchType }> = ({ research }) => {
+const Research: React.FC<{
+  research: ResearchType;
+}> = ({ research }) => {
   const router = useRouter();
   console.log(router.isFallback);
   if (router.isFallback) {
@@ -29,6 +32,7 @@ const Research: React.FC<{ research: ResearchType }> = ({ research }) => {
       category={research.category}
       mdxSource={research.mdxSource}
       createdAt={research.createdAt}
+      usedCharts={research.usedCharts}
     />
   );
 };
@@ -38,13 +42,12 @@ export default Research;
 export const getStaticProps: GetStaticProps<
   {
     research: ResearchType;
-    componentNames: string[];
   },
   ResearchSSRParams
 > = async ({ params }) => {
   // return at least null when no data was found after the query
   let research: ResearchType = null;
-  let componentNames: string[] = null;
+  const usedCharts: ChartType[] = [];
 
   // query gql
   const { data, error, loading } = await client.query<{
@@ -79,9 +82,22 @@ export const getStaticProps: GetStaticProps<
   }
 
   // avoid rendering heavy components
-  componentNames = [
-    /<Another/.test(data.research.content) ? "Another" : null,
-  ].filter(Boolean);
+  const chartTypes: ChartType[] = [
+    "RBar",
+    "RPie",
+    "RArea",
+    "RLine",
+    "RScatter",
+    "RVenn",
+  ];
+  for (const c of chartTypes) {
+    const chartReg = new RegExp(c);
+    const usedChart = chartReg.test(data.research.content) ? c : null;
+    if (usedChart) {
+      usedCharts.push(usedChart);
+    }
+  }
+
   const mdxSource = await serialize(data.research.content, {
     scope: { chartProps: data.research.chartProps }, // extract the chart props array
   });
@@ -91,12 +107,12 @@ export const getStaticProps: GetStaticProps<
     mdxSource,
     createdAt: data.research.createdAt,
     image: data.research.image,
+    usedCharts,
   };
 
   return {
     props: {
       research,
-      componentNames,
     },
   };
 };

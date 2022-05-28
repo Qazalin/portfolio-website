@@ -22,7 +22,6 @@ const Index = ({ data }) => {
   return (
     <Box>
       <Hero />
-      <RPie />
     </Box>
   );
 };

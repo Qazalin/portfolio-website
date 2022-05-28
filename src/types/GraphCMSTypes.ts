@@ -1,5 +1,6 @@
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { ParsedUrlQuery } from "querystring";
+import { ChartType } from "./ChartProps";
 export type Category = "analysis" | "crypto";
 
 /*--------------- GraphCMS ---------------*/
@@ -18,6 +19,7 @@ export interface ResearchPreviewType {
 /** Interface for the full research used in the UI with serialized content for MDX */
 export interface ResearchType extends ResearchPreviewType {
   mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>; // The markdown content
+  usedCharts: ChartType[];
 }
 
 export type AllResearchRes = {

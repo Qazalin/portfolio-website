@@ -11,4 +11,17 @@ export interface RVennData extends VennDiagramData {
 export type FocusedVennPart = { x: string; y: string };
 
 /** All the supported charts */
-export type ChartType = "Pie" | "Line" | "Bar" | "Area" | "Scatter" | "Venn";
+export type ChartType =
+  | "RPie"
+  | "RLine"
+  | "RBar"
+  | "RArea"
+  | "RScatter"
+  | "RVenn";
+
+export interface PieChartProps {
+  data: Record<string, string>[];
+  dataKey: string;
+  nameKey: string;
+  colors: string[];
+}
