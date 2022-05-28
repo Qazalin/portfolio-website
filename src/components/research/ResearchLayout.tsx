@@ -1,6 +1,9 @@
 import { GridItem, Box, Grid } from "@chakra-ui/react";
+import { ResearchPreviewType, ResearchType } from "@qazalin/types";
 import { ResearchPreview } from "./ResearchPreview";
-export const ResearchLayout = ({ posts }) => {
+export const ResearchLayout: React.FC<{ posts: ResearchPreviewType[] }> = ({
+  posts,
+}) => {
   return (
     <Grid
       templateColumns={[

@@ -43,3 +43,5 @@ export interface NFTCollectionType {
   name: string;
   slug: string;
 }
+
+export * from "./ChartProps";

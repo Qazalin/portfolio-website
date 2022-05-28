@@ -6,11 +6,14 @@ import {
   CollectionView,
   NFTCollections,
   NFTRarityView,
+  RPie,
+  RVenn,
 } from "@qazalin/components";
 import { fetchNFTGoData } from "@qazalin/lib/fetcher";
-import { NFTCollectionType } from "@qazalin/types";
+import { NFTCollectionType, NFTGoCollectionRes } from "@qazalin/types";
+import { AttributeView } from "@qazalin/components/chart/tooltips";
 
-const Index = () => {
+const Index = ({ data }) => {
   /*  const { data, error } = useSWR(
     "https://api.nftgo.dev/eth/v1/market/metrics",
     fetchNFTGoData
@@ -19,18 +22,12 @@ const Index = () => {
   return (
     <Box>
       <Hero />
-      <NFTRarityView />
+      <RPie />
     </Box>
   );
 };
 
 export default Index;
-
-interface NFTGoCollectionRes extends Response {
-  slug: string;
-  name: string;
-  logo: string;
-}
 
 /* 
 export async function getServerSideProps() {
@@ -72,3 +69,23 @@ export async function getServerSideProps() {
   };
   }
 */
+
+/*
+export async function getServerSideProps() {
+  const contractAddress = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB";
+  const allAttrs = [];
+  const tokenIds = ["6089", "3100"];
+  for (const tokenId of tokenIds) {
+    const data = await fetchNFTGoData(
+      `https://api.nftgo.dev/eth/v1/nft/${contractAddress}/${tokenId}/info`
+    );
+    allAttrs.push(data);
+  }
+
+  return {
+    props: {
+      data: allAttrs,
+    },
+  };
+  }
+  */

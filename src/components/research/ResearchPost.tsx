@@ -3,6 +3,10 @@ import { ResearchType } from "@qazalin/types";
 import { formatDate } from "@qazalin/utils";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote";
+import { RH2, RH3, RImage, RText } from "../mdx";
+import { RLink } from "../mdx/Link";
+import { Test } from "../mdx/Test";
+import { Another } from "../mdx/Another";
 
 export const ResearchPost: React.FC<ResearchType> = ({
   image,
@@ -11,6 +15,16 @@ export const ResearchPost: React.FC<ResearchType> = ({
   mdxSource,
   createdAt,
 }) => {
+  const components = {
+    p: RText,
+    h2: RH2,
+    h3: RH3,
+    a: RLink,
+    img: RImage,
+    li: RText, // TODO: change this to a real list element
+    Test,
+    Another,
+  };
   return (
     <Stack w="100%" h="100%">
       <Box
@@ -24,7 +38,12 @@ export const ResearchPost: React.FC<ResearchType> = ({
         zIndex="base"
         maxW="1400px"
       >
-        <Image src={image.url} layout="fill" objectFit="cover" />
+        <Image
+          priority={true}
+          src={image.url}
+          layout="fill"
+          objectFit="cover"
+        />
       </Box>
       <Center flexDir="column" pos="relative" textAlign="center" mt="24px">
         <Text m="10px" variant="mono" opacity="0.5">
@@ -38,7 +57,7 @@ export const ResearchPost: React.FC<ResearchType> = ({
         </Text>
       </Center>
       <Box w="100%" h="calc(100% - 40%)" position="absolute" bottom={0}>
-        <MDXRemote {...mdxSource} />
+        <MDXRemote {...mdxSource} components={components} />
       </Box>
     </Stack>
   );

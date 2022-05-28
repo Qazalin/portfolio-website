@@ -5,3 +5,4 @@ export * from "./Layout";
 export * from "./Navbar";
 export * from "./mdx";
 export * from "./nft";
+export * from "./chart";
