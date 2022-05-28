@@ -7,7 +7,7 @@ import {
   ResearchSSRParams,
   ResearchType,
 } from "@qazalin/types";
-import { GetStaticPathsResult, GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import { ResearchPost } from "@qazalin/components";
 import { serialize } from "next-mdx-remote/serialize";
 import { Spinner, Box } from "@chakra-ui/react";
@@ -101,7 +101,7 @@ export const getStaticProps: GetStaticProps<
   };
 };
 
-export const getStaticPaths: GetStaticPathsResult = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await client.query<AllResearchRes>({
     query: gql`
       {
@@ -113,7 +113,6 @@ export const getStaticPaths: GetStaticPathsResult = async () => {
     `,
   });
 
-  const blogs = [{ slug: "1" }, { slug: "2" }];
   return {
     paths: data.researchs.map(({ slug }) => ({
       params: { slug },
