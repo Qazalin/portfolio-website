@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import { findObjectIntersection } from "@qazalin/lib";
+import { findObjectIntersection, getObjectIntersections } from "@qazalin/lib";
 import { COLORS, ThemeColors } from "@qazalin/theme";
 import {
   VennDiagram,
@@ -39,7 +39,7 @@ export const RVenn = () => {
   const k1 = "NFT 1";
   const k2 = "NFT 2";
 
-  const intersection = findObjectIntersection(a1, a2, true);
+  const intersection = getObjectIntersections(a1, a2);
   const rData: RVennData[] = [
     { key: [k1], data: a1.length, attrs: a1 },
     { key: [k2], data: a2.length, attrs: a2 },

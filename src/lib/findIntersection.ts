@@ -8,30 +8,24 @@ export function findListIntersection<T = any>(array1: T[], array2: T[]): T[] {
   return intersection;
 }
 
-// Generic helper function that can be used for the three operations:
-const operation = (list1: array, list2, isUnion = false) =>
-  list1.filter(
-    (
-      (set) => (a) =>
-        isUnion === set.has(a.userId)
-    )(new Set(list2.map((b) => b.userId)))
+/**
+ * Returns the intersections between two arrays of objects
+ * @param obj1
+ * @param obj2
+ * @returns An array of the intersections
+ */
+export function getObjectIntersections(
+  obj1: { type: string; value: string }[],
+  obj2: { type: string; value: string }[]
+) {
+  const intersections = [];
+  const r = obj1.filter((k) =>
+    obj2.map(({ type, value }, i) => {
+      const doesIntersect = k.type === type && k.value === value;
+      if (doesIntersect) {
+        intersections.push(obj2[i]);
+      }
+    })
   );
-
-export function findObjectIntersection<T = any>(
-  array1: T[],
-  array2: T[],
-  isUnion = false
-): T[] {
-  const result = array1.filter(
-    (
-      (set) => (a) =>
-        isUnion === set.has(a.userId)
-    )(new Set(array2.map((b) => b.userId)))
-  );
-  return result;
+  return intersections;
 }
-
-// Following functions are to be used:
-const inBoth = (list1, list2) => operation(list1, list2, true),
-  inFirstOnly = operation,
-  inSecondOnly = (list1, list2) => inFirstOnly(list2, list1);
