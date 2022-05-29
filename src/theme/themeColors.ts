@@ -51,8 +51,8 @@ export const ThemeColors = {
         _dark: "#A4B3F9",
       },
       secondary: {
-        default: "blue.300",
-        _dark: "blue.500",
+        _dark: "blue.300",
+        default: "blue.500",
       },
     },
   },
