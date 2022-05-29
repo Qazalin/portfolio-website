@@ -1,5 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { ApolloProvider } from "@apollo/client";
+import { ThemeProvider } from "next-themes";
 
 import { AppProps } from "next/app";
 import "@fontsource/raleway";
@@ -12,13 +13,15 @@ import { client } from "@qazalin/gql";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ApolloProvider client={client}>
-      <ChakraProvider resetCSS theme={theme}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ChakraProvider>
-    </ApolloProvider>
+    <ThemeProvider defaultTheme="system">
+      <ApolloProvider client={client}>
+        <ChakraProvider resetCSS theme={theme}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ChakraProvider>
+      </ApolloProvider>
+    </ThemeProvider>
   );
 }
 

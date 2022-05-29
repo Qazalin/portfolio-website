@@ -1,17 +1,22 @@
 import { useColorMode, IconButton } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import useSound from "use-sound";
+import { useTheme } from "next-themes";
 
 export const DarkModeSwitch = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const isDark = colorMode === "dark";
+  const { theme, setTheme } = useTheme();
+  const isDark = theme === "dark";
   const [playSwitchSound] = useSound("/sounds/lightSwitch.mp3", {
     volume: 0.25,
   });
 
   function handleChangeMood() {
     playSwitchSound();
-    toggleColorMode();
+    if (isDark) {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
   }
   return (
     <IconButton

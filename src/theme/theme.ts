@@ -9,12 +9,7 @@ import { buttonStyles } from "./components/button";
 const colors = COLORS;
 const semanticTokens = ThemeColors.semanticTokens;
 
-const config: ThemeConfig = {
-  initialColorMode: "dark",
-  useSystemColorMode: true,
-};
 export const theme: ThemeConfig = extendTheme({
-  config,
   colors,
   semanticTokens,
   fonts: {
@@ -28,6 +23,7 @@ export const theme: ThemeConfig = extendTheme({
         fontFamily: "body",
         bg: "bg1",
         lineHeight: "base",
+        color: "text1",
       },
     }),
   },
