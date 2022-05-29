@@ -1,5 +1,7 @@
 import { Box } from "@chakra-ui/react";
+import { Main } from "@qazalin/components";
+
 export const Index = () => {
-  return <Box>Index</Box>;
+  return <Main />;
 };
 export default Index;
