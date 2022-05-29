@@ -49,13 +49,16 @@ export const RPie: React.FC<PieChartProps> = ({
         Relative percentage of diamond hands
       </Text>
       <MyLogo
-        pos="absolute"
-        top="50%"
-        right="50%"
-        zIndex={2}
-        transform="translate(-42%, -50%)"
-        justifyContent="center"
-        alignItems="center"
+        opacity="0.5"
+        props={{
+          pos: "absolute",
+          top: "50%",
+          right: "50%",
+          zIndex: 2,
+          transform: "translate(-42%, -50%)",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       />
 
       <ResponsiveContainer

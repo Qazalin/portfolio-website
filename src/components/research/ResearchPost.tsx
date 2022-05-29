@@ -1,8 +1,7 @@
-import { Box, Stack, Center, Text } from "@chakra-ui/react";
+import { Image, Box, Stack, Center, Text } from "@chakra-ui/react";
 import { ResearchType } from "@qazalin/types";
 import { formatDate } from "@qazalin/utils";
 import { RPie } from "@qazalin/components";
-import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote";
 import { RH2, RH3, RImage, RText } from "../mdx";
 import { RLink } from "../mdx/Link";
@@ -36,25 +35,19 @@ export const ResearchPost: React.FC<ResearchType> = ({
   };
   // console.log(components);
   return (
-    <Stack w="100%" h="100%">
-      <Box
-        w="100%"
-        h="40%"
-        position="absolute"
+    <Stack maxW="840px" m="auto" w="100%" h="100%">
+      <Image
+        src={image.url}
+        objectFit="contain"
         top={0}
         left={0}
         right={0}
+        pos="absolute"
+        w="100%"
+        maxW="480px"
         m="auto"
-        zIndex="base"
-        maxW="1400px"
-      >
-        <Image
-          priority={true}
-          src={image.url}
-          layout="fill"
-          objectFit="cover"
-        />
-      </Box>
+        zIndex="revert"
+      />
       <Center flexDir="column" pos="relative" textAlign="center" mt="24px">
         <Text m="10px" variant="mono" opacity="0.5">
           {category}
@@ -66,7 +59,7 @@ export const ResearchPost: React.FC<ResearchType> = ({
           {formatDate(createdAt)}
         </Text>
       </Center>
-      <Box w="100%" h="calc(100% - 40%)" position="absolute" bottom={0}>
+      <Box w="100%" display="block" h="calc(100vh - 400px)" bottom={0}>
         <MDXRemote {...mdxSource} components={components} />
       </Box>
     </Stack>
