@@ -10,6 +10,7 @@ import {
   RVenn,
   CollapseCode,
   RBar,
+  RTable,
 } from "@qazalin/components";
 import { fetchNFTGoData } from "@qazalin/lib/fetcher";
 import { NFTCollectionType, NFTGoCollectionRes } from "@qazalin/types";
@@ -24,6 +25,7 @@ const Index = () => {
   return (
     <Box>
       <Hero />
+      <RTable />
     </Box>
   );
 };
