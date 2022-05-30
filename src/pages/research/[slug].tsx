@@ -11,6 +11,7 @@ import {
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ResearchPost } from "@qazalin/components";
 import { serialize } from "next-mdx-remote/serialize";
+import rehypeHighlight from "rehype-highlight";
 import { Spinner, Box } from "@chakra-ui/react";
 
 const Research: React.FC<{
@@ -100,6 +101,7 @@ export const getStaticProps: GetStaticProps<
 
   const mdxSource = await serialize(data.research.content, {
     scope: { chartProps: data.research.chartProps }, // extract the chart props array
+    mdxOptions: { rehypePlugins: [rehypeHighlight] },
   });
   research = {
     title: data.research.title,

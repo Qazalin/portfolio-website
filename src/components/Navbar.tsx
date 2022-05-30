@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { NavigationDrawer } from "./NavigationDrawer";
 
 export const Navbar = () => {
-  const sections = ["work", "research", "contact"];
+  const sections = ["research", "contact"];
   const { width } = useWindowSize();
   return (
     <Flex justifyContent="space-between">

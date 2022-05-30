@@ -8,6 +8,7 @@ import {
   NFTRarityView,
   RPie,
   RVenn,
+  CollapseCode,
 } from "@qazalin/components";
 import { fetchNFTGoData } from "@qazalin/lib/fetcher";
 import { NFTCollectionType, NFTGoCollectionRes } from "@qazalin/types";
@@ -22,6 +23,7 @@ const Index = ({ data }) => {
   return (
     <Box>
       <Hero />
+      <CollapseCode />
     </Box>
   );
 };
