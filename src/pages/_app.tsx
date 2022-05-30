@@ -12,6 +12,7 @@ import { Layout } from "@qazalin/components";
 import { client } from "@qazalin/gql";
 // import "highlight.js/styles/night-owl.css";
 // import "highlight.js/styles/gradient-dark.css";
+// import "highlight.js/styles/tokyo-night-dark.css";
 import "highlight.js/styles/tokyo-night-dark.css";
 
 function MyApp({ Component, pageProps }) {
