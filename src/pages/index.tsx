@@ -9,12 +9,13 @@ import {
   RPie,
   RVenn,
   CollapseCode,
+  RBar,
 } from "@qazalin/components";
 import { fetchNFTGoData } from "@qazalin/lib/fetcher";
 import { NFTCollectionType, NFTGoCollectionRes } from "@qazalin/types";
 import { AttributeView } from "@qazalin/components/chart/tooltips";
 
-const Index = ({ data }) => {
+const Index = () => {
   /*  const { data, error } = useSWR(
     "https://api.nftgo.dev/eth/v1/market/metrics",
     fetchNFTGoData
@@ -23,7 +24,6 @@ const Index = ({ data }) => {
   return (
     <Box>
       <Hero />
-      <CollapseCode />
     </Box>
   );
 };

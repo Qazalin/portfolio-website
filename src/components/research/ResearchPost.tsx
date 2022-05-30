@@ -1,9 +1,9 @@
-import { Image, Box, Stack, Center, Text } from "@chakra-ui/react";
+import { Image, HStack, Box, Stack, Center, Text } from "@chakra-ui/react";
 import { ResearchType } from "@qazalin/types";
 import { formatDate } from "@qazalin/utils";
-import { RPie } from "@qazalin/components";
+import { RPie, RBar } from "@qazalin/components";
 import { MDXRemote } from "next-mdx-remote";
-import { RH2, RH3, RImage, RText } from "../mdx";
+import { CollapseCode, RH2, RH3, RImage, RText } from "../mdx";
 import { RLink } from "../mdx/Link";
 import { Test } from "../mdx/Test";
 import { Another } from "../mdx/Another";
@@ -25,6 +25,7 @@ export const ResearchPost: React.FC<ResearchType> = ({
     a: RLink,
     img: RImage,
     li: RText, // TODO: change this to a real list element
+    code: CollapseCode,
   };
   const components = {
     ...defaultComponents,
@@ -32,6 +33,7 @@ export const ResearchPost: React.FC<ResearchType> = ({
     Test,
     // save up on performance
     RPie: usedCharts.includes("RPie") ? RPie : null,
+    RBar: usedCharts.includes("RBar") ? RBar : null,
   };
   // console.log(components);
   return (

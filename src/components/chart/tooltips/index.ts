@@ -1,2 +1,2 @@
 export * from "./VennTooltip";
-export * from "./PieTooltip";
+export * from "./CustomTooltip";

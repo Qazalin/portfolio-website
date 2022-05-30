@@ -43,6 +43,11 @@ export const buttonStyles: ComponentStyleConfig = {
     },
     secondary: {
       bg: "secondary",
+      borderRadius: "2px",
+      textTransform: "capitalize",
+      p: "10px",
+      boxShadow: "none",
+      shadow: "none",
     },
   },
   // default values for `size` and `variant`

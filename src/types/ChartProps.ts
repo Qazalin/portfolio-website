@@ -1,5 +1,6 @@
 import { VennDiagramData } from "reaviz";
 import { NFTGoNFTAttribute } from "@qazalin/types";
+import { ReactElement, JSXElementConstructor } from "react";
 
 export interface RVennData extends VennDiagramData {
   attrs: NFTGoNFTAttribute[];
@@ -19,9 +20,14 @@ export type ChartType =
   | "RScatter"
   | "RVenn";
 
-export interface PieChartProps {
+export interface ChartProps {
   data: Record<string, string>[];
   dataKey: string;
   nameKey: string;
   colors: string[];
+  title: string;
+}
+export interface ChartWrapperProps {
+  title: string;
+  children: ReactElement<any, string | JSXElementConstructor<any>>;
 }

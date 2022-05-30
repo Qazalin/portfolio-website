@@ -1,7 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
 import { TooltipProps } from "recharts";
 
-export const PieTooltip: React.FC<TooltipProps<number, string>> = ({
+export const CustomTooltip: React.FC<TooltipProps<number, string>> = ({
   payload,
   active,
 }) => {
