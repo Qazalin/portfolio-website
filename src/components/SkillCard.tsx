@@ -1,7 +1,7 @@
 import { Box, Image, Text } from "@chakra-ui/react";
 export const SkillCard = () => {
   return (
-    <Box w="100%" h="100%" bg="bg2" borderRadius="md">
+    <Box w="100%" h="100%">
       <NextLogo />
       <Text>NextJs</Text>
     </Box>
