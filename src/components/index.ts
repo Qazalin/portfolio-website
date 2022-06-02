@@ -11,3 +11,4 @@ export * from "./contact";
 export * from "./NavigationDrawer";
 export * from "./ResearchView";
 export * from "./SkillsGrid";
+export * from "./SkillCard";

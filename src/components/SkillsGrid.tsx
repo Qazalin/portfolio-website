@@ -1,4 +1,5 @@
 import { Grid, GridItem } from "@chakra-ui/react";
+import { SkillCard } from "@qazalin/components";
 
 export const SkillsGrid = () => {
   return (
@@ -12,12 +13,24 @@ export const SkillsGrid = () => {
       ]}
       gap={["1rem", "1.5rem"]}
     >
-      <GridItem colSpan={4} bg="bg2" />
-      <GridItem colSpan={4} bg="bg2" />
-      <GridItem colSpan={4} bg="bg2" />
-      <GridItem colSpan={4} bg="bg2" />
-      <GridItem colSpan={4} bg="bg2" />
-      <GridItem colSpan={4} bg="bg2" />
+      <GridItem colSpan={4}>
+        <SkillCard />
+      </GridItem>
+      <GridItem colSpan={4}>
+        <SkillCard />
+      </GridItem>
+      <GridItem colSpan={4}>
+        <SkillCard />
+      </GridItem>
+      <GridItem colSpan={4}>
+        <SkillCard />
+      </GridItem>
+      <GridItem colSpan={4}>
+        <SkillCard />
+      </GridItem>
+      <GridItem colSpan={4}>
+        <SkillCard />
+      </GridItem>
     </Grid>
   );
 };
