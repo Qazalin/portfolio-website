@@ -1,25 +1,19 @@
 import { Box, Text } from "@chakra-ui/react";
 import { ResearchPreview } from "@qazalin/components";
+import { ResearchPreviewType, ResearchType } from "@qazalin/types";
 
-export const ResearchView = () => {
+export const ResearchView: React.FC<ResearchPreviewType> = (props) => {
   return (
-    <Box
-      w="100%"
-      h="100%"
-      maxH="400px"
-      display="flex"
-      flexDir="column"
-      alignItems="center"
-    >
+    <Box display="flex" flexDir="column" alignItems="center">
       <Text variant="h1" mb="10px">
         Latest Research
       </Text>
       <ResearchPreview
-        category={"analysis"}
-        title="another"
-        imageUrl="https://media.graphassets.com/iTex9021T6a4zdEDpeIb"
-        createdAt={"2022-05-23T06:13:40.904727+00:00 "}
-        slug="another"
+        category={props.category}
+        title={props.title}
+        imageUrl={props.image.url}
+        createdAt={props.createdAt}
+        slug={props.slug}
       />
     </Box>
   );

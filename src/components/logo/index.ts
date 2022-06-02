@@ -9,3 +9,4 @@ export * from "./CSS";
 export * from "./ChakraLogo";
 export * from "./TS";
 export * from "./React";
+export * from "./BraintrustLogo";
