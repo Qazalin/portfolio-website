@@ -15,7 +15,7 @@ export const ChartWrapper: React.FC<ChartWrapperProps> = ({
   children,
 }) => {
   return (
-    <Box p="10px" my="20px" pos="relative">
+    <Box p="10px" my="20px" pos="relative" minW="500px">
       <Text variant="h2" fontWeight="bold" textAlign="center">
         {title}
       </Text>

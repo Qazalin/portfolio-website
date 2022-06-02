@@ -61,7 +61,7 @@ export const ResearchPost: React.FC<ResearchType> = ({
           {formatDate(createdAt)}
         </Text>
       </Center>
-      <Box w="100%" display="block" h="calc(100vh - 400px)" bottom={0}>
+      <Box w="100%" display="block" bottom={0}>
         <MDXRemote {...mdxSource} components={components} />
       </Box>
     </Stack>

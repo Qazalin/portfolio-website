@@ -27,7 +27,7 @@ export const RTable = () => {
         <Thead>
           <Tr>
             {columns.map((col, i) => (
-              <Th key={i}>{col}</Th>
+              <Th key={`col-${i}`}>{col}</Th>
             ))}
           </Tr>
         </Thead>

@@ -22,6 +22,7 @@ export const ResearchPreview: React.FC<ResearchPreviewProps> = ({
   createdAt,
   slug,
 }) => {
+  console.log(category, title, imageUrl, createdAt, slug);
   return (
     <LinkBox
       w="100%"
@@ -35,7 +36,6 @@ export const ResearchPreview: React.FC<ResearchPreviewProps> = ({
       animate="enter"
       exit="exit"
       whileHover={{ scale: 1.05 }}
-      flexDir="column"
       p="20px"
       borderRadius="lg"
       _hover={{
@@ -47,12 +47,11 @@ export const ResearchPreview: React.FC<ResearchPreviewProps> = ({
       <LinkOverlay href={`/research/${slug}`} w="100%" h="100%">
         <ChakraImage
           src={imageUrl}
-          minH="350px"
           borderRadius="lg"
           objectFit="cover"
           mb="20px"
         />
-        <Box mb="40px">
+        <Box mb="30px">
           <Text fontWeight="bold" variant="h2">
             {title}
           </Text>
@@ -61,7 +60,6 @@ export const ResearchPreview: React.FC<ResearchPreviewProps> = ({
           <Text pos="absolute" bottom={2} variant="h4" mb="10px" color="text2">
             {formatDate(createdAt)}
           </Text>
-          <CategoryCard category={category} />
         </Box>
       </LinkOverlay>
     </LinkBox>

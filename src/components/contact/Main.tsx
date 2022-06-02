@@ -34,17 +34,17 @@ export const Main = () => {
           <SocialIcon
             icon={<AiOutlineTwitter />}
             ariaLabel="twitter-icon"
-            link="twitter.com"
+            link="https://twitter.com/qazalin"
           />
           <SocialIcon
             icon={<AiFillLinkedin />}
             ariaLabel="linkedin-icon"
-            link="twitter.com"
+            link="https://www.linkedin.com/in/qazal-samani-574899226/"
           />
           <SocialIcon
             icon={<AiFillGithub />}
             ariaLabel="github-icon"
-            link="twitter.com"
+            link="https://github.com/Qazalin"
           />
         </Flex>
       </GridItem>

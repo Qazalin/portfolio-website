@@ -9,3 +9,5 @@ export * from "./chart";
 export * from "./logo";
 export * from "./contact";
 export * from "./NavigationDrawer";
+export * from "./ResearchView";
+export * from "./SkillsGrid";

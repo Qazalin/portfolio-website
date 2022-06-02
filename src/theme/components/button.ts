@@ -19,7 +19,13 @@ export const buttonStyles: ComponentStyleConfig = {
       bg: "primary",
       borderRadius: "10px",
       textTransform: "capitalize",
+      border: "2px solid",
+      borderColor: "primary",
       p: "15px",
+      _hover: {
+        bg: "transparent",
+        color: "primary",
+      },
     },
     primaryGhost: {
       bg: "trasnparent",

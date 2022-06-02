@@ -1,4 +1,4 @@
-import { Center, Flex, Image, Box, Text } from "@chakra-ui/react";
+import { Center, Divider, Image, Box, Text } from "@chakra-ui/react";
 import { LayoutPropType } from "@qazalin/types";
 import { Navbar } from "@qazalin/components";
 
@@ -11,6 +11,7 @@ export const Layout: React.FC<LayoutPropType> = ({ children }) => {
       <Center w="100%" h="100px" justifyContent="flex-start">
         <Navbar />
       </Center>
+      <Divider opacity={0.5} />
       <Box mt="10px" w="100%" h="85%">
         {children}
       </Box>
