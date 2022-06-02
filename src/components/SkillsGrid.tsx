@@ -2,10 +2,10 @@ import { Grid, Button, GridItem } from "@chakra-ui/react";
 import { SkillCard } from "@qazalin/components";
 import { IoIosArrowDropup, IoIosArrowDropdown } from "react-icons/io";
 import { useState } from "react";
+import { SkillType } from "@qazalin/types";
 
-export const SkillsGrid = () => {
+export const SkillsGrid: React.FC<{ skills: SkillType[] }> = ({ skills }) => {
   // if the user clicks on "show more", the grid should expand and show more info
-  const [isExpand, setIsExpand] = useState(false);
   return (
     <Grid
       w="100%"
@@ -17,37 +17,17 @@ export const SkillsGrid = () => {
       ]}
       gap={["1rem", "1.5rem"]}
     >
-      <GridItem
-        rowSpan={isExpand ? 2 : 1}
-        colSpan={4}
-        bg="bg2"
-        borderRadius="md"
-      >
-        <SkillCard />
-        <Button
-          variant="primaryGhost"
-          rightIcon={isExpand ? <IoIosArrowDropup /> : <IoIosArrowDropdown />}
-          onClick={() => setIsExpand(!isExpand)}
-          w="120px"
+      {skills.map((s, i) => (
+        <GridItem
+          key={`skill-${i}`}
+          rowSpan={1}
+          colSpan={4}
+          bg="bg2"
+          borderRadius="md"
         >
-          {isExpand ? "Hide" : "Show more"}
-        </Button>
-      </GridItem>
-      <GridItem colSpan={4}>
-        <SkillCard />
-      </GridItem>
-      <GridItem colSpan={4}>
-        <SkillCard />
-      </GridItem>
-      <GridItem colSpan={4}>
-        <SkillCard />
-      </GridItem>
-      <GridItem colSpan={4}>
-        <SkillCard />
-      </GridItem>
-      <GridItem colSpan={4}>
-        <SkillCard />
-      </GridItem>
+          <SkillCard {...s} />
+        </GridItem>
+      ))}
     </Grid>
   );
 };

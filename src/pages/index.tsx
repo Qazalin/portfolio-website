@@ -1,5 +1,5 @@
 import { Box, Stack } from "@chakra-ui/react";
-import { Hero, ResearchView, SkillsGrid } from "@qazalin/components";
+import { Hero, ResearchView, SkillsTab } from "@qazalin/components";
 
 const Index = () => {
   return (
@@ -11,10 +11,14 @@ const Index = () => {
         <ResearchView />
       </Box>
       <Box w="100%" h="50vh">
-        <SkillsGrid />
+        <SkillsTab />
       </Box>
     </Stack>
   );
 };
+
+// frameworks and libs = ["NextJs", "React", "Apollo", "Chakra UI", "Foundry", "Hardhat", "EthersJs", "Pandas", "Plotly"]
+// At the bottom have:
+// Trusted by ["NFTGo", "Braintrust"]
 
 export default Index;

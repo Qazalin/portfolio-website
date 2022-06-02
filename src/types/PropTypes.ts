@@ -44,4 +44,10 @@ export interface NFTCollectionType {
   slug: string;
 }
 
+export type SkillType = {
+  svgImg: React.ReactElement;
+  title: string;
+  value: number;
+};
+
 export * from "./ChartProps";
