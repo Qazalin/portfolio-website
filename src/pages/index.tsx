@@ -13,17 +13,17 @@ import {
 
 const Index = ({ latestResearch }) => {
   return (
-    <Stack w="100%" bg="bg1" spacing="50px">
+    <Stack w="100%" spacing="50px">
       <Box w="100%">
         <Hero />
       </Box>
-      <Box w="100%" h="50vh" py="10px">
+      <Box w="100%" py="10px">
         <ResearchView {...latestResearch.researchs[0]} />
       </Box>
-      <Box w="100%" h="50vh">
+      <Box w="100%">
         <SkillsTab />
       </Box>
-      <Box textAlign="center">
+      <Box mb="20px" textAlign="center">
         <Text variant="h1" mb="10px">
           Trusted By
         </Text>

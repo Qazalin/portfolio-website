@@ -37,7 +37,7 @@ export const ResearchPost: React.FC<ResearchType> = ({
   };
   // console.log(components);
   return (
-    <Stack maxW="840px" m="auto" w="100%" h="100%">
+    <Stack maxW="840px" m="auto">
       <Image
         src={image.url}
         objectFit="contain"
@@ -61,7 +61,7 @@ export const ResearchPost: React.FC<ResearchType> = ({
           {formatDate(createdAt)}
         </Text>
       </Center>
-      <Box w="100%" display="block" bottom={0}>
+      <Box bottom={0}>
         <MDXRemote {...mdxSource} components={components} />
       </Box>
     </Stack>

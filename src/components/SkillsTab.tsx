@@ -39,8 +39,20 @@ export const SkillsTab = () => {
     <>
       <Tabs>
         <TabList>
-          <Tab>Languages</Tab>
-          <Tab>Frame Works and Libraries</Tab>
+          <Tab
+            _focus={{ outline: "none" }}
+            _hover={{ bg: "bg3" }}
+            borderTopRadius="10px"
+          >
+            Languages
+          </Tab>
+          <Tab
+            borderTopRadius="10px"
+            _focus={{ outline: "none" }}
+            _hover={{ bg: "bg3" }}
+          >
+            Frame Works and Libraries
+          </Tab>
         </TabList>
 
         <TabPanels>

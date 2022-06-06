@@ -12,6 +12,7 @@ export const ResearchLayout: React.FC<{ posts: ResearchPreviewType[] }> = ({
         "repeat(12, minmax(0, 1fr))",
       ]}
       gap={["1rem", "1.5rem"]}
+      mt="40px"
     >
       {posts.map((r, i) => (
         <GridItem key={i} colSpan={4}>

@@ -14,11 +14,13 @@ export const SkillCard: React.FC<SkillType> = ({ svgImg, title, value }) => {
       <Box
         display="flex"
         flexDir="column"
-        justifyContent="center"
+        justifyContent="space-between"
         alignItems="center"
+        w="100%"
+        h="100%"
       >
         {svgImg}
-        <Text variant="h3" mt="10px">
+        <Text verticalAlign="bottom" variant="h3" mt="10px">
           {title}
         </Text>
       </Box>

@@ -26,7 +26,7 @@ export const DarkModeSwitch = () => {
   return (
     <IconButton
       onClick={handleChangeMood}
-      position="absolute"
+      pos="absolute"
       top={10}
       right={4}
       icon={isDark ? <SunIcon /> : <MoonIcon />}
