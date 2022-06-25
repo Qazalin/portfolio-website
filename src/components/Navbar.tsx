@@ -6,7 +6,8 @@ import { useRouter } from "next/router";
 import { NavigationDrawer } from "./NavigationDrawer";
 
 export const Navbar = () => {
-  const sections = ["code", "media", "research"];
+  // const sections = ["code", "media", "research"];
+  const sections = ["research", "contact"];
   const { width } = useWindowSize();
   const router = useRouter();
   return (
@@ -30,7 +31,11 @@ export const Navbar = () => {
               variant="navbar"
               key={i}
               href={`/${s}`}
-              color={router.route === `/${s}` ? "primary" : "text1"}
+              textDecoration={
+                router.route === `/${s}`
+                  ? "underline var(--chakra-colors-primary)"
+                  : "none"
+              }
             >
               {s}
             </Link>

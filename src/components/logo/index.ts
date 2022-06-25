@@ -10,3 +10,4 @@ export * from "./ChakraLogo";
 export * from "./TS";
 export * from "./React";
 export * from "./BraintrustLogo";
+export * from "./SoundWave";

@@ -4,7 +4,7 @@ import { MDXCustomComponent } from "@qazalin/types";
 /**
  * Custom paragraph text component for MDX
  */
-let maxW;
+let maxW: string | number | undefined;
 export const RText: MDXCustomComponent = (props) => {
   return <Text variant="p" {...props} />;
 };

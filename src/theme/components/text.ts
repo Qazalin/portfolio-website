@@ -1,10 +1,5 @@
 import { ComponentStyleConfig } from "@chakra-ui/react";
 
-export const FONTS = {
-  headingFont: '"Raleway", sans-serif',
-  bodyFont: '"Lato", sans-serif',
-};
-
 export const textStyles: ComponentStyleConfig = {
   // style object for base or default style
   baseStyle: {
@@ -41,7 +36,10 @@ export const textStyles: ComponentStyleConfig = {
       fontWeight: "light",
     },
     h4: {
-      fontSize: ["0.85rem", "1rem"],
+      fontSize: { sm: "0.85rem", md: "1rem" },
+    },
+    h5: {
+      fontSize: ["0.7rem", "0.85rem"],
     },
     p: {
       fontSize: ["1rem", "1.25rem"],
