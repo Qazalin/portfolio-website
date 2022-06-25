@@ -36,9 +36,6 @@ const Index = ({ latestResearch }) => {
   );
 };
 
-// At the bottom have:
-// Trusted by ["NFTGo", "Braintrust"]
-
 export default Index;
 
 export const getStaticProps: GetStaticProps = async () => {

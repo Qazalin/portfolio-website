@@ -1,1 +1,1 @@
-export const primaryGradient = "linear(to-r, #a770ef, #cf8bf3, #fdb99b)";
+export const primaryGradient = "linear(to-r, #48cae4, #00b4d8, primary)";

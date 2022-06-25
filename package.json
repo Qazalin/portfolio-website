@@ -13,6 +13,8 @@
     "@emotion/styled": "^11",
     "@fontsource/dejavu-mono": "^4.5.4",
     "@fontsource/lato": "^4.5.8",
+    "@fontsource/oswald": "^4.5.9",
+    "@fontsource/quattrocento-sans": "^4.5.8",
     "@fontsource/raleway": "^4.5.8",
     "framer-motion": "^6",
     "graphql": "^16.5.0",

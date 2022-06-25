@@ -768,6 +768,16 @@
   resolved "https://registry.npmjs.org/@fontsource/lato/-/lato-4.5.8.tgz"
   integrity sha512-IoSvhhzHsSzJu5XEOmDqzqcSmtfcJ788nz2TDgGXac076DApUsYIPHHBd0dh9guMBIVuHZ8Y2dlXNHFl4bCyLA==
 
+"@fontsource/oswald@^4.5.9":
+  version "4.5.9"
+  resolved "https://registry.yarnpkg.com/@fontsource/oswald/-/oswald-4.5.9.tgz#204990e6601c7c18ae3defe2c530dd24469d16b2"
+  integrity sha512-+VDR5CB8aYbAEltbPzbnQrkLcxDYEyipiVpDnQDYlo8y/Jgvf57LvEP8KezQNnx6M+SucwfqVGsaoig/fCRHzA==
+
+"@fontsource/quattrocento-sans@^4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/quattrocento-sans/-/quattrocento-sans-4.5.8.tgz#cc7b63127583b880f15d107ffdbe6e9d127423d3"
+  integrity sha512-zNUhBRX7ZR/lA+s0fN+1KZVZ4ZPV3WwiHXDR23fGYAxsIeKWTurYR0rTi2n2kjPIVa0s4b31L6H7DwJQgt2q8w==
+
 "@fontsource/raleway@^4.5.8":
   version "4.5.8"
   resolved "https://registry.npmjs.org/@fontsource/raleway/-/raleway-4.5.8.tgz"

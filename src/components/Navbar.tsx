@@ -2,11 +2,13 @@ import { Flex, HStack, Link, LinkBox } from "@chakra-ui/react";
 import { MyLogo, DarkModeSwitch } from "@qazalin/components";
 import { useWindowSize } from "@qazalin/hooks";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 import { NavigationDrawer } from "./NavigationDrawer";
 
 export const Navbar = () => {
-  const sections = ["research", "contact"];
+  const sections = ["code", "media", "research"];
   const { width } = useWindowSize();
+  const router = useRouter();
   return (
     <Flex justifyContent="space-between">
       <Link href="/">
@@ -24,10 +26,11 @@ export const Navbar = () => {
           sections.map((s, i) => (
             <Link
               as={motion.a}
-              whileHover={{ scale: 1.2 }}
+              whileHover={{ scale: router.route === `/${s}` ? 1 : 1.1 }}
               variant="navbar"
               key={i}
               href={`/${s}`}
+              color={router.route === `/${s}` ? "primary" : "text1"}
             >
               {s}
             </Link>

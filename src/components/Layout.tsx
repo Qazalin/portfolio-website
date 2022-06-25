@@ -11,7 +11,7 @@ export const Layout: React.FC<LayoutPropType> = ({ children }) => {
       <Center w="100%" h="100px" justifyContent="flex-start">
         <Navbar />
       </Center>
-      <Divider opacity={0.5} />
+      <Divider colorScheme="blue" />
       <Box mt="10px" w="100%" h="85%">
         {children}
       </Box>

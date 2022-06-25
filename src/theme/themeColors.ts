@@ -1,3 +1,4 @@
+const v2Colors = ["#1652f0", "#F6F7FA", "#1D1D1D"];
 export const ThemeColors = {
   semanticTokens: {
     colors: {
@@ -19,8 +20,8 @@ export const ThemeColors = {
         _dark: "yellow.400",
       },
       bg0: {
-        default: "gray.50",
-        _dark: "gray.900",
+        default: v2Colors[1],
+        _dark: v2Colors[2],
       },
       bg1: {
         default: "gray.100",
@@ -46,10 +47,7 @@ export const ThemeColors = {
         default: "gray.600",
         _dark: "gray.500",
       },
-      primary: {
-        default: "#6E85F7",
-        _dark: "#A4B3F9",
-      },
+      primary: v2Colors[0],
       secondary: {
         _dark: "blue.300",
         default: "blue.500",

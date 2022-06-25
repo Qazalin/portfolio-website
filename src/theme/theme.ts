@@ -13,15 +13,15 @@ export const theme: ThemeConfig = extendTheme({
   colors,
   semanticTokens,
   fonts: {
-    heading: "Raleway, sans-serif",
-    body: "Lato, sans-serif",
+    heading: "Oswald, sans-serif",
+    body: "Quattrocento Sans, sans-serif",
   },
   styles: {
     global: () => ({
       body: {
         overflowX: "hidden",
         fontFamily: "body",
-        bg: "bg1",
+        bg: "bg0",
         lineHeight: "base",
         color: "text1",
       },

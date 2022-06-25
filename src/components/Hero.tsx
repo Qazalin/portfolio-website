@@ -1,30 +1,44 @@
-import { Flex, Center, Button, Text, Box } from "@chakra-ui/react";
+import { Grid, GridItem, Center, Button, Text, Box } from "@chakra-ui/react";
 import { heroAnimationVariant, primaryGradient } from "@qazalin/theme";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-export const Hero = ({ title, subtitle, desc }) => (
-  <Center flexDir="column" w="100%" h="100%">
-    <Text variant="heading">{title}</Text>
-    <Text
-      variant="heading"
-      bgGradient={primaryGradient}
-      bgClip="text"
-      fontWeight="bold"
+export const Hero = ({ title, subtitle }) => (
+  <Grid
+    w="100%"
+    h="100%"
+    templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
+  >
+    <GridItem
+      flexDir="column"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
     >
-      {subtitle}
-    </Text>
-    <Text>{desc}</Text>
-    <Flex mt="10px" justifyContent="end">
-      <Button mr="10px" variant="primary">
-        work
-      </Button>
-      <Button variant="primaryGhost">Skills</Button>
-    </Flex>
-  </Center>
+      <Text variant="heading">{title}</Text>
+      <Text
+        variant="heading"
+        bgGradient={primaryGradient}
+        bgClip="text"
+        fontWeight="bold"
+      >
+        {subtitle}
+      </Text>
+    </GridItem>
+    <GridItem display="flex" alignItems="center" justifyContent="center">
+      <Image
+        src="/main.png"
+        width={511}
+        height={511}
+        style={{
+          borderRadius: "10px",
+        }}
+      />
+    </GridItem>
+  </Grid>
 );
 
 Hero.defaultProps = {
-  title: "I craft",
+  title: "Shaping the future with",
   subtitle: "products",
-  desc: "Utilizing data to democratize access to next-generation technology",
 };
