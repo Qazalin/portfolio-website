@@ -62,7 +62,7 @@ export const RVenn = () => {
                     )}
                   />
                 }
-                fill={ThemeColors.semanticTokens.colors.primary.default}
+                fill={ThemeColors.semanticTokens.colors.primary}
               />
             }
           />
