@@ -17,7 +17,6 @@ export const ResearchPost: React.FC<ResearchType> = ({
   usedCharts,
 }) => {
   const charts = Object.fromEntries(usedCharts.map((k) => [k, k]));
-  console.log(charts);
   const defaultComponents = {
     p: RText,
     h2: RH2,
@@ -35,7 +34,7 @@ export const ResearchPost: React.FC<ResearchType> = ({
     RPie: usedCharts.includes("RPie") ? RPie : null,
     RBar: usedCharts.includes("RBar") ? RBar : null,
   };
-  // console.log(components);
+
   return (
     <Stack maxW="840px" m="auto">
       <Image
@@ -44,9 +43,9 @@ export const ResearchPost: React.FC<ResearchType> = ({
         top={0}
         left={0}
         right={0}
-        pos="absolute"
+        pos="relative"
         w="100%"
-        maxW="480px"
+        maxW="280px"
         m="auto"
         zIndex="revert"
       />
