@@ -10,8 +10,11 @@ import {
   NFTGoLogo,
   SkillsTab,
 } from "@qazalin/components";
+import { useRouter } from "next/router";
 
-const Index = ({ latestResearch }) => {
+const Index = ({ latestResearch, me }) => {
+  console.log(me);
+  const router = useRouter();
   return (
     <Stack w="100%" spacing="50px">
       <Box w="100%">
@@ -56,5 +59,15 @@ export const getStaticProps: GetStaticProps = async () => {
     `,
   });
 
-  return { props: { latestResearch } };
+  const res = await fetch(
+    `https://api.twitter.com/2/users/${process.env.NEXT_PUBLIC_TWITTER_ID}/tweets?tweet.fields=attachments,created_at&media.fields=preview_image_url,url&expansions=attachments.media_keys`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_TWITTER_BEARER_TOKEN}`,
+      },
+    }
+  );
+  const me = await res.json();
+
+  return { props: { latestResearch, me } };
 };

@@ -9,9 +9,14 @@ import { buttonStyles } from "./components/button";
 const colors = COLORS;
 const semanticTokens = ThemeColors.semanticTokens;
 
+const config = {
+  initialColorMode: "dark",
+};
+
 export const theme: ThemeConfig = extendTheme({
   colors,
   semanticTokens,
+  config,
   fonts: {
     heading: "Oswald, sans-serif",
     body: "Quattrocento Sans, sans-serif",

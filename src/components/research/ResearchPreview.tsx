@@ -10,11 +10,30 @@ import {
   AspectRatio,
 } from "@chakra-ui/react";
 import { ResearchPreviewProps } from "@qazalin/types";
-import { motion } from "framer-motion";
+import { keyframes, css } from "@emotion/react";
 import { CategoryCard } from "./CategoryCard";
 import { formatDate } from "@qazalin/utils";
-import { fadeUpIn } from "@qazalin/theme";
 
+const fadeUpIn = keyframes`
+    from {
+    opacity: 0;
+        transform: translateY(-10%);
+    }
+
+    to {
+    opacity: 1;
+        transform: none;
+    }
+`;
+
+const goUp = keyframes`
+    from {
+        transform: none;
+    }   
+    to {
+        transform: translateY(-4%);
+    }
+`;
 export const ResearchPreview: React.FC<ResearchPreviewProps> = ({
   category,
   title,
@@ -30,19 +49,17 @@ export const ResearchPreview: React.FC<ResearchPreviewProps> = ({
       h="100%"
       maxW="500px"
       bg="bg2"
-      as={motion.div}
-      variants={fadeUpIn}
-      initial="exit"
-      animate="enter"
-      exit="exit"
-      whileHover={{ scale: 1.05 }}
       p="20px"
       borderRadius="lg"
+      border="2px solid"
+      borderColor={"transparent"}
       _hover={{
         borderColor: "primary",
-        borderWidth: "2px",
-        boxShadow: "2px",
+        transform: "translateY(-10px)",
+        transition: "transform 310ms",
       }}
+      // transition={"border transform 0.2s ease-in-out"}
+      transition="transform 450ms"
     >
       <LinkOverlay href={`/research/${slug}`} w="100%" h="100%">
         <ChakraImage

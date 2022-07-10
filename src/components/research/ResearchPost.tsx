@@ -1,7 +1,7 @@
 import { Image, HStack, Box, Stack, Center, Text } from "@chakra-ui/react";
 import { ResearchType } from "@qazalin/types";
 import { formatDate } from "@qazalin/utils";
-import { RPie, RBar } from "@qazalin/components";
+import { RTable, RPie, RBar } from "@qazalin/components";
 import { MDXRemote } from "next-mdx-remote";
 import { CollapseCode, RH2, RH3, RImage, RText } from "../mdx";
 import { RLink } from "../mdx/Link";
@@ -30,6 +30,7 @@ export const ResearchPost: React.FC<ResearchType> = ({
     ...defaultComponents,
     Another,
     Test,
+    RTable,
     // save up on performance
     RPie: usedCharts.includes("RPie") ? RPie : null,
     RBar: usedCharts.includes("RBar") ? RBar : null,
